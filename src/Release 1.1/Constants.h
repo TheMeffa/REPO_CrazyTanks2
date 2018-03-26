@@ -10,11 +10,12 @@ const int MAX_RAND_SETTINGS = 15;
 const int MAX_WALL_LENGHT = 5;
 const int MAX_ETANK_WAY = 20;
 const int MIN_ETANK_WAY = 5;
-const int MAX_HERO_LIVES = 100;
+const int MAX_HERO_LIVES = 3;
 const int MINIMAL_TANK_DISTANCE = 2;
 const int CASTLE_WALL_LENGHT = 3;
 const int COUNT_DIRECTIONS = 4; 
-const int DIFFICULT_LEVEL = 60;
+const int DIFFICULT_LEVEL_SHOT_HERO = 60;
+const int DIFFICULT_LEVEL_SHOT_GOLD = 10;
 const int PERCENTS = 100;
 const int SECONDS_MINUTES = 60;
 

@@ -136,7 +136,7 @@ void Tank :: enemyAI(const int& heroPositionX, const int& heroPositionY) {
 
 		int randomShotValue = rand() % PERCENTS;
 
-		if (randomShotValue <= DIFFICULT_LEVEL) {
+		if (randomShotValue <= DIFFICULT_LEVEL_SHOT_HERO) {
 			
 				
 			if (positionX_ == heroPositionX) {
@@ -173,29 +173,24 @@ void Tank :: enemyAI(const int& heroPositionX, const int& heroPositionY) {
 					}
 				}
 			}
-
-			if (positionX_ == FIELD_WIDTH - BORDER_OUT) {
-				shotDirection_ = DOWN;
-				if (bullet_.getIsShoted() != 1) {
-					bullet_.setPosition(getPositionX(), getPositionY(), getShotDirection());
-					bullet_.setShoted(true);
-
-					moveDirection_ = static_cast <MoveDirection> (rand() % COUNT_DIRECTIONS);
+			if (randomShotValue <= DIFFICULT_LEVEL_SHOT_GOLD) {
+				if (positionX_ == FIELD_WIDTH - BORDER_OUT) {
+					shotDirection_ = DOWN;
+					if (bullet_.getIsShoted() != 1) {
+						bullet_.setPosition(getPositionX(), getPositionY(), getShotDirection());
+						bullet_.setShoted(true);	
+					}
 				}
-			}
 
-			if (positionY_ == FIELD_WIDTH - BORDER_OUT) {
-				shotDirection_ = RIGHT;
-				if (bullet_.getIsShoted() != 1) {
-					bullet_.setPosition(getPositionX(), getPositionY(), getShotDirection());
-					bullet_.setShoted(true);
-
-					moveDirection_ = static_cast <MoveDirection> (rand() % COUNT_DIRECTIONS);
-				
+				if (positionY_ == FIELD_WIDTH - BORDER_OUT) {
+					shotDirection_ = RIGHT;
+					if (bullet_.getIsShoted() != 1) {
+						bullet_.setPosition(getPositionX(), getPositionY(), getShotDirection());
+						bullet_.setShoted(true);
+					}
 				}
+
 			}
-
-
 		}
 	}
 	else {
