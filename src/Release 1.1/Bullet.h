@@ -1,10 +1,13 @@
 #pragma once
 #ifndef Bullet_h
 #define Bullet_h
+
+#include "Bullet.h"
 #include "Constants.h"
 #include "FieldPart.h"
 #include "GameMap.h"
 #include "moveDirection.h"
+//#include  "GameFacade.h"
 
 
 class Bullet
@@ -13,15 +16,18 @@ public:
 	Bullet();
 
 	CurrentState getTexture();
-	
+	MoveDirection getMoveDirection();
 	bool getIsShoted();
 	bool getIsHeroBullet();
 
 	void movement(GameMap& gameMapAll);
-	void setIsHeroBullet(bool isHero);
-	void setShoted(bool isShoted);
-	void setPosition(int x, int y, MoveDirection moveDirection);
+
+	void setIsHeroBullet(const bool& isHero);
+	void setShoted(const bool& isShoted);
+	void setPosition(const int& x, const int& y, const MoveDirection& moveDirection);
 	void setDefault();
+
+
 
 	int getPositionY();
 	int getPositionX();
@@ -33,7 +39,7 @@ private:
 	bool isShoted_;
 	bool isHeroBullet_;
 
-	char texture_;
+	const char texture_ = BULLET_TEXTURE_;
 	MoveDirection moveDirection_;
 };
 
